@@ -19,7 +19,7 @@ const initialState: UserState = {
 // Async thunk for handling user registration
 export const registerUser = createAsyncThunk(
   'user/registerUser',
-  async (formData: { email: string; password: string; name?: string }, { rejectWithValue }) => {
+  async (formData: { email: string; password: string; name?: string, userType: string }, { rejectWithValue }) => {
     try {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, formData);
       return response.data;

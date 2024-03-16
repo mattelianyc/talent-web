@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/slices/userSlice'; // Ensure this path is correct
 import { AppDispatch } from '../../redux/store/store';
+import Router, { useRouter } from 'next/router';
 
 interface LoginFormData {
   email: string;
@@ -11,15 +12,24 @@ interface LoginFormData {
 const Login: React.FC = () => {
   const [formData, setFormData] = useState<LoginFormData>({ email: '', password: '' });
   const dispatch: AppDispatch = useDispatch();
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('form data ', formData)
     e.preventDefault();
-    dispatch(loginUser(formData));
+    dispatch(loginUser(formData))
+      .unwrap()
+      .then(() => {
+        // Redirect to the dashboard after successful login
+        router.push('/dashboard');
+      })
+      .catch((error) => {
+        console.error('Login error', error);
+        // Handle login error (e.g., show an error message)
+      });
   };
 
 
