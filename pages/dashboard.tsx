@@ -23,7 +23,7 @@ const Dashboard: React.FC = () => {
   }, [isAuthenticated, router]);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="text-center">
         <h2 className="text-2xl font-bold">Welcome to the Dashboard</h2>
         <p className="mt-4">You are now logged in!</p>

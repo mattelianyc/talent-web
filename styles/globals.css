@@ -7,6 +7,9 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+body {
+  @apply bg-black text-white;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -30,4 +33,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Specifically targeting input, textarea, and select elements to change text color to black */
+input, textarea, select {
+  @apply text-black; /* This applies black text color to input fields */
 }

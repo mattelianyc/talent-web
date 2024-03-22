@@ -52,7 +52,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-lg shadow">
         <h2 className="text-xl font-bold text-center text-gray-800">Create an Account</h2>
         <form onSubmit={handleRegister} className="space-y-6">
