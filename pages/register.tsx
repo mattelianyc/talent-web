@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../redux/slices/userSlice';
+import { registerUser } from '../redux/slices/userSlice';
 import Link from 'next/link';
 import { AppDispatch } from '@/redux/store/store';
 import Router, { useRouter } from 'next/router';

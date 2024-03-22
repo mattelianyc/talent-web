@@ -12,13 +12,13 @@ const Dashboard: React.FC = () => {
 
   const handleLogout = () => {
     dispatch(logout()); // Dispatch the logout action
-    router.push('/auth/login'); // Redirect to the login page
+    router.push('/login'); // Redirect to the login page
   };
 
   // Redirect to the login page if not authenticated
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/auth/login');
+      router.push('/login');
     }
   }, [isAuthenticated, router]);
 
